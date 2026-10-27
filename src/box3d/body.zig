@@ -1,33 +1,5 @@
 //! Body (box3d.h, types.h)
 
-const std = @import("std");
-
-const b3 = @import("../box3d.zig");
-const AABB = b3.AABB;
-const BodyCastResult = b3.BodyCastResult;
-const BodyPlaneResult = b3.BodyPlaneResult;
-const BodyTOIResult = b3.BodyTOIResult;
-const Capsule = b3.Capsule;
-const CompoundData = b3.CompoundData;
-const ContactData = b3.ContactData;
-const HeightFieldData = b3.HeightFieldData;
-const HullData = b3.HullData;
-const Joint = b3.Joint;
-const MassData = b3.MassData;
-const Matrix3 = b3.Matrix3;
-const MeshData = b3.MeshData;
-const Pos = b3.Pos;
-const Quat = b3.Quat;
-const QueryFilter = b3.QueryFilter;
-const Shape = b3.Shape;
-const ShapeDef = b3.ShapeDef;
-const ShapeProxy = b3.ShapeProxy;
-const Sphere = b3.Sphere;
-const Transform = b3.Transform;
-const Vec3 = b3.Vec3;
-const World = b3.World;
-const WorldTransform = b3.WorldTransform;
-
 /// Body id references a body instance. This should be treated as an opaque handle.
 pub const Body = extern struct {
     index1: i32 = 0,
@@ -642,6 +614,33 @@ pub const BodyDef = extern struct {
 /// Use this to initialize your body definition
 pub const defaultBodyDef = BodyDef.default;
 
+const std = @import("std");
+
+const b3 = @import("../box3d.zig");
+const AABB = b3.AABB;
+const BodyCastResult = b3.BodyCastResult;
+const BodyPlaneResult = b3.BodyPlaneResult;
+const BodyTOIResult = b3.BodyTOIResult;
+const Capsule = b3.Capsule;
+const CompoundData = b3.CompoundData;
+const ContactData = b3.ContactData;
+const HeightFieldData = b3.HeightFieldData;
+const HullData = b3.HullData;
+const Joint = b3.Joint;
+const MassData = b3.MassData;
+const Matrix3 = b3.Matrix3;
+const MeshData = b3.MeshData;
+const Pos = b3.Pos;
+const Quat = b3.Quat;
+const QueryFilter = b3.QueryFilter;
+const Shape = b3.Shape;
+const ShapeDef = b3.ShapeDef;
+const ShapeProxy = b3.ShapeProxy;
+const Sphere = b3.Sphere;
+const Transform = b3.Transform;
+const Vec3 = b3.Vec3;
+const World = b3.World;
+const WorldTransform = b3.WorldTransform;
 /// Create a rigid body given a definition. No reference to the definition is retained. So you can create the definition
 /// on the stack and pass it as a pointer.
 /// ```zig

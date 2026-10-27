@@ -2,8 +2,10 @@
 //! Generated together with the bindings.
 
 const std = @import("std");
-const b3 = @import("box3d.zig");
+
 const c = @import("box3d_c");
+
+const b3 = @import("box3d.zig");
 
 fn checkStruct(comptime Z: type, comptime C: type) !void {
     if (@typeInfo(C) == .@"opaque") return;

@@ -8,6 +8,33 @@ const Quat = b3.Quat;
 const Transform = b3.Transform;
 const Vec3 = b3.Vec3;
 const World = b3.World;
+/// Create a parallel joint
+/// See `ParallelJointDef` for details.
+pub const createParallelJoint = World.createParallelJoint;
+/// Create a distance joint
+/// See `DistanceJointDef` for details.
+pub const createDistanceJoint = World.createDistanceJoint;
+/// Create a motor joint
+/// See `MotorJointDef` for details.
+pub const createMotorJoint = World.createMotorJoint;
+/// Create a filter joint.
+/// See `FilterJointDef` for details.
+pub const createFilterJoint = World.createFilterJoint;
+/// Create a prismatic (slider) joint.
+/// See `PrismaticJointDef` for details.
+pub const createPrismaticJoint = World.createPrismaticJoint;
+/// Create a revolute joint
+/// See `RevoluteJointDef` for details.
+pub const createRevoluteJoint = World.createRevoluteJoint;
+/// Create a spherical joint
+/// See `SphericalJointDef` for details.
+pub const createSphericalJoint = World.createSphericalJoint;
+/// Create a weld joint
+/// See `WeldJointDef` for details.
+pub const createWeldJoint = World.createWeldJoint;
+/// Create a wheel joint.
+/// See `WheelJointDef` for details.
+pub const createWheelJoint = World.createWheelJoint;
 
 /// Joint id references a joint instance. This should be treated as an opaque handle.
 pub const Joint = extern struct {
@@ -506,42 +533,6 @@ pub const WheelJointDef = extern struct {
 
 /// Use this to initialize your joint definition
 pub const defaultWheelJointDef = WheelJointDef.default;
-
-/// Create a parallel joint
-/// See `ParallelJointDef` for details.
-pub const createParallelJoint = World.createParallelJoint;
-
-/// Create a distance joint
-/// See `DistanceJointDef` for details.
-pub const createDistanceJoint = World.createDistanceJoint;
-
-/// Create a motor joint
-/// See `MotorJointDef` for details.
-pub const createMotorJoint = World.createMotorJoint;
-
-/// Create a filter joint.
-/// See `FilterJointDef` for details.
-pub const createFilterJoint = World.createFilterJoint;
-
-/// Create a prismatic (slider) joint.
-/// See `PrismaticJointDef` for details.
-pub const createPrismaticJoint = World.createPrismaticJoint;
-
-/// Create a revolute joint
-/// See `RevoluteJointDef` for details.
-pub const createRevoluteJoint = World.createRevoluteJoint;
-
-/// Create a spherical joint
-/// See `SphericalJointDef` for details.
-pub const createSphericalJoint = World.createSphericalJoint;
-
-/// Create a weld joint
-/// See `WeldJointDef` for details.
-pub const createWeldJoint = World.createWeldJoint;
-
-/// Create a wheel joint.
-/// See `WheelJointDef` for details.
-pub const createWheelJoint = World.createWheelJoint;
 
 /// A distance joint. Use `joint` for the functions shared by all joint types.
 pub const DistanceJoint = extern struct {

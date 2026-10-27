@@ -1,11 +1,11 @@
 //! Runs small simulations through the bindings to check that they work end to end.
 
 const std = @import("std");
-const b3 = @import("box3d.zig");
-
 const expect = std.testing.expect;
 const expectEqual = std.testing.expectEqual;
 const expectApproxEqAbs = std.testing.expectApproxEqAbs;
+
+const b3 = @import("box3d.zig");
 
 fn makeGround(world: b3.World) !b3.Body {
     var body_def = b3.defaultBodyDef();

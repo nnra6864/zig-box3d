@@ -1,24 +1,5 @@
 //! Shape (box3d.h, types.h)
 
-const std = @import("std");
-
-const b3 = @import("../box3d.zig");
-const AABB = b3.AABB;
-const Body = b3.Body;
-const Capsule = b3.Capsule;
-const CompoundData = b3.CompoundData;
-const ContactData = b3.ContactData;
-const HeightFieldData = b3.HeightFieldData;
-const HullData = b3.HullData;
-const MassData = b3.MassData;
-const Mesh = b3.Mesh;
-const MeshData = b3.MeshData;
-const Pos = b3.Pos;
-const Sphere = b3.Sphere;
-const Vec3 = b3.Vec3;
-const World = b3.World;
-const WorldCastOutput = b3.WorldCastOutput;
-
 /// Shape id references a shape instance. This should be treated as an opaque handle.
 pub const Shape = extern struct {
     index1: i32 = 0,
@@ -450,41 +431,53 @@ pub const ShapeDef = extern struct {
 /// Use this to initialize your shape definition
 pub const defaultShapeDef = ShapeDef.default;
 
+const std = @import("std");
+
+const b3 = @import("../box3d.zig");
+const AABB = b3.AABB;
+const Body = b3.Body;
+const Capsule = b3.Capsule;
+const CompoundData = b3.CompoundData;
+const ContactData = b3.ContactData;
+const HeightFieldData = b3.HeightFieldData;
+const HullData = b3.HullData;
+const MassData = b3.MassData;
+const Mesh = b3.Mesh;
+const MeshData = b3.MeshData;
+const Pos = b3.Pos;
+const Sphere = b3.Sphere;
+const Vec3 = b3.Vec3;
+const World = b3.World;
+const WorldCastOutput = b3.WorldCastOutput;
 /// Create a circle shape and attach it to a body. The shape definition and geometry are fully cloned.
 /// Contacts are not created until the next time step.
 /// Returns the shape id for accessing the shape
 pub const createSphereShape = Body.createSphereShape;
-
 /// Create a capsule shape and attach it to a body. The shape definition and geometry are fully cloned.
 /// Contacts are not created until the next time step.
 /// Returns the shape id for accessing the shape
 pub const createCapsuleShape = Body.createCapsuleShape;
-
 /// Create a convex hull shape and attach it to a body. The shape definition is fully cloned. Contacts are not created
 /// until the next time step.
 /// Returns the shape id for accessing the shape
 pub const createHullShape = Body.createHullShape;
-
 /// Create a convex hull shape and attach it to a body. The hull is cloned then transformed with scale applied first.
 /// Use this for non-uniform or mirrored scale or a baked local transform. The baked result is shared through the
 /// world hull database. The shape definition and geometry are fully cloned. Contacts are not created until the next time step.
 /// Returns the shape id for accessing the shape
 pub const createTransformedHullShape = Body.createTransformedHullShape;
-
 /// Create a mesh hull shape and attach it to a body. The shape definition is fully cloned but the mesh is not.
 /// Contacts are not created until the next time step.
 /// Mesh collision only creates contacts on static bodies.
 /// Warning: this holds reference to the input mesh data which must remain valid for the lifetime of this shape
 /// Returns the shape id for accessing the shape
 pub const createMeshShape = Body.createMeshShape;
-
 /// Create a height-field shape and attach it to a body. The shape definition is fully cloned but the height field is not.
 /// Contacts are not created until the next time step.
 /// Height field is only allowed on static bodies.
 /// Warning: this holds reference to the input height field which must remain valid for the lifetime of this shape
 /// Returns the shape id for accessing the shape
 pub const createHeightFieldShape = Body.createHeightFieldShape;
-
 /// Baked compound shapes are only allowed on static bodies.
 /// Note: runtime compounds are achieved by adding multiple shapes to a body.
 /// Runtime compounds can be dynamic and/or kinematic.
