@@ -2,7 +2,7 @@
 
 Zig bindings for [Box3D](https://github.com/erincatto/box3d), Erin Catto's 3D physics engine, at commit [`f36d061`](https://github.com/erincatto/box3d/commit/f36d061ba26998c87cb7dc593a4065aaa03fb7eb) (0.1.0 plus later changes).
 
-- Covers the whole public API, grouped by topic under `src/box3d/` (`world.zig`, `body.zig`, `shape.zig`, `joint.zig`, `geometry.zig`, ...) and re-exported flat from `src/box3d.zig` (`b3.World`, `b3.createHull`, `b3.Vec3`, ...).
+- Covers the whole public API, grouped by topic under `src/box3d/` (`world.zig`, `body.zig`, `shape.zig`, `joint.zig`, `geometry.zig`, ...) and re exported flat from `src/box3d.zig` (`b3.World`, `b3.createHull`, `b3.Vec3`, ...).
 - Ids are handles with methods: `b3World_Step(worldId, ...)` is `world.step(...)`, `b3CreateBody(worldId, &def)` is `world.createBody(&def)`, `b3CreateSphereShape(bodyId, ...)` is `body.createSphereShape(...)`.
 - Each joint type has its own handle (`RevoluteJoint`, `WheelJoint`, ...) returned by its create function, so `hinge.setMotorSpeed(2)` works. The functions shared by all joints live on `hinge.joint`.
 - Zig friendly signatures: slices instead of pointer + count (`body.getShapes(&buffer)` returns the filled part), results returned instead of written to out pointers, event arrays as slices, `[:0]const u8` names.
@@ -84,7 +84,7 @@ With `linkage = .dynamic`, install the library next to your executable with `b.i
 
 - Box3D's `B3_ASSERT`/`B3_VALIDATE` macros and C++ operator overloads.
 - `b3World_DumpShapeBounds`, which is declared in the header but not implemented.
-- Compile-time overrides of `B3_MAX_MANIFOLD_POINTS` and friends. The bindings assume Box3D's defaults.
+- Compile time overrides of `B3_MAX_MANIFOLD_POINTS` and friends. The bindings assume Box3D's defaults.
 
 ## Testing
 
