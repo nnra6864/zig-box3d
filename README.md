@@ -114,3 +114,27 @@ The bindings are released into the public domain under [CC0 1.0](LICENSE).
 
 Box3D itself is © Erin Catto and distributed under the [MIT license](https://github.com/erincatto/box3d/blob/main/LICENSE).
 The doc comments in `src/box3d/` are adapted from Box3D's headers and remain under that license.
+
+# ☦
+
+```
+   Ὤ
+ Ὁ   Ν
+Ι̅Ϲ̅ │ Χ̅Ϲ̅
+───┼───
+ΝΙ │ ΚΑ
+   ☦
+```
+
+Εἰς δόξαν τοῦ Θεοῦ<br>
+*To the glory of God*
+
+Τῇ Ὑπεραγίᾳ Θεοτόκῳ δόξα<br>
+*Glory to the Most Holy Theotokos*
+
+Δόξα τῷ Θεῷ πάντων ἕνεκεν<br>
+*Glory to God for all things*
+
+ΑΜΗΝ
+
+☦
